@@ -1,0 +1,40 @@
+@input-size: 32px;
+
+.centerAll() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchInputWrap {
+
+  width: 100%;
+  height: @input-size;
+
+  background-color: #f4f4f4;
+  border-radius: 5px;
+
+  .centerAll();
+
+  .searchInputIconBox {
+    width: @input-size;
+    height: @input-size;
+
+    background-color: transparent;
+    .centerAll();
+  }
+
+  .searchInput {
+    width: calc(100% - @input-size);
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  .searchInput:focus {
+    border: none;
+    outline: none;
+  }
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>r-ui example</title>
+		<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+		<!-- 注意r-ui.umd.js的路径 -->
+		<script src="./dist/r-ui.umd.js"></script>
+		<link href="./dist/r-ui.umd.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div id="example"></div>
+		<script>
+			const onClick = () => {
+				alert('hello')
+			}
+			// window上存在rui，是因为我们将组件包导出为了umd包，取名为rui
+			// 使用React原生方法创建Button的react组件实例
+			// 等价于：
+			// <Button onClick={onClick}>hello, world</Button>
+			// const button = React.createElement({rui.Button,{ onClick },'hello, world'})
+			const button = React.createElement(rui.SearchInput, {
+				placeholder: '占位符',
+				defaultValue: 'hello, world',
+				onChange: (value, e) => console.log(value, e),
+			})
+			ReactDOM.render(button, document.getElementById('example'))
+		</script>
+	</body>
+</html>

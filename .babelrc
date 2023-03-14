@@ -1,0 +1,12 @@
+// @babel/core如何知道要使用我们安装的各种plugin插件和preset预置插件包的呢？通过.babelrc文件
+{
+	"presets": [
+		"@babel/preset-env",
+		"@babel/preset-typescript",
+		"@babel/preset-react"
+	],
+	"plugins": [
+		"@babel/plugin-proposal-class-properties",
+		"@babel/plugin-proposal-object-rest-spread"
+	]
+}
